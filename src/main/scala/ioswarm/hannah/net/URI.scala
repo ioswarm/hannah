@@ -49,7 +49,9 @@ object URI {
     )
   }
 
-  def apply(host: String, port: Int): URI = new URI(host = Option(host), port = Option(port))
+  def apply(scheme: String, host: String): URI = new URI(scheme = Option(scheme), host = Option(host))
+  def apply(scheme: String, host: String, path: String): URI = new URI(scheme = Option(scheme), host = Option(host), path = Option(path))
+  def apply(scheme: String, host: String, path: String, query: String): URI = new URI(scheme = Option(scheme), host = Option(host), path = Option(path), query = Option(query))
   def apply(scheme: String, host: String, port: Int): URI = new URI(scheme = Option(scheme), host = Option(host), port = Option(port))
   def apply(scheme: String, host: String, port: Int, path: String): URI = new URI(scheme = Option(scheme), host = Option(host), port = Option(port), path = Option(path))
   def apply(scheme: String, host: String, port: Int, path: String, query: String): URI = new URI(scheme = Option(scheme), host = Option(host), port = Option(port), path = Option(path), query = Option(query))
