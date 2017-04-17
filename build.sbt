@@ -15,5 +15,6 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-
+  "io.netty" % "netty-transport" % "4.1.9.Final"
+  , "io.netty" % "netty-codec-http" % "4.1.9.Final"
 )
