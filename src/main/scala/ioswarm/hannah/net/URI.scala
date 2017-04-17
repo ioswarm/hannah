@@ -56,6 +56,7 @@ object URI {
   def apply(scheme: String, host: String, port: Int, path: String): URI = new URI(scheme = Option(scheme), host = Option(host), port = Option(port), path = Option(path))
   def apply(scheme: String, host: String, port: Int, path: String, query: String): URI = new URI(scheme = Option(scheme), host = Option(host), port = Option(port), path = Option(path), query = Option(query))
 
+  def apply(): URI = new URI()
 }
 case class URI(scheme: Option[String] = None, user: Option[String] = None, password: Option[String] = None, host: Option[String] = None, port: Option[Int] = None, path: Option[String] = None, query: Option[String] = None, fragment: Option[String] = None) {
 
@@ -114,7 +115,8 @@ case class URI(scheme: Option[String] = None, user: Option[String] = None, passw
     case None => ""
   }
 
-  def uri: String = schemeArea+authorityArea+pathArea+queryArea+fragmentArea
+  def completePath: String = pathArea+queryArea+fragmentArea
+  def uri: String = schemeArea+authorityArea+completePath
 
   override def toString: String = uri
 
@@ -122,15 +124,18 @@ case class URI(scheme: Option[String] = None, user: Option[String] = None, passw
   def user(user: String): URI = copy(user = Option(user))
   def password(password: String): URI = copy(password = Option(password))
   def host(host: String): URI = copy(host = Option(host))
+
   def port(port: Int): URI = copy(port = Option(port))
+  def ::(port: Int): URI = this.port(port)
   def path(path: String): URI = copy(path = Option(path))
   def appendPath(segment: String): URI = {
-    path((path match {
+    this.path((path match {
       case Some(v) => v
       case None => ""
     }) + (if (!segment.startsWith("/")) "/" else "")+segment)
   }
-  def ++(segment: String): URI = appendPath(segment)
+  def +/(segment: String): URI = appendPath(segment)
+  //def /(segment: String): URI = appendPath(segment)
   def query(query: String): URI = copy(query = Option(query))
   def appendQuery(segment: String): URI = {
     require(segment.length > 0)
@@ -144,5 +149,6 @@ case class URI(scheme: Option[String] = None, user: Option[String] = None, passw
   def +?(segment: String): URI = appendQuery(segment)
   def +?[K,V](tuple: (K, V)): URI = appendQuery(tuple)
   def fragment(fragment: String): URI = copy(fragment = Option(fragment))
+  def +#(fragment: String): URI = this.fragment(fragment)
 
 }
