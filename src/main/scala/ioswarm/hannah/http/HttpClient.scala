@@ -93,6 +93,7 @@ private[http] class CallbackInitializer(ssl: Boolean, p: Promise[HttpResponse]) 
     ch.pipeline()
       .addLast(new HttpClientCodec())
       .addLast(new HttpContentDecompressor())
+      // TODO add SSL support
       .addLast(new HttpObjectAggregator(1048576))
       .addLast(new SimpleChannelInboundHandler[HttpObject]() {
         override def channelRead0(ctx: ChannelHandlerContext, msg: HttpObject): Unit = {
