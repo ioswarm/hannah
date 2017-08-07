@@ -1,4 +1,4 @@
-package ioswarm.hannah
+package de.ioswarm.hannah
 
 import scala.util.matching.Regex
 
@@ -17,8 +17,11 @@ package net {
 
   private[net] class StringUriSupport(str: String) {
     def scheme: URI = Scheme(str)
+
     def s: URI = scheme
+
     def uri: URI = URI(str)
+
     def u: URI = uri
   }
 

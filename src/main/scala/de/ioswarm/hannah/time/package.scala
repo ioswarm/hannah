@@ -1,4 +1,4 @@
-package ioswarm.hannah
+package de.ioswarm.hannah
 
 import scala.language.implicitConversions
 
@@ -79,37 +79,56 @@ package object time {
 }
 
 package time {
+
   private[time] trait ToDateType[T] {
     def d(): Date
+
     def t(): Time
+
     def dt(): DateTime
   }
 
   private[time] class StringToDateType(any: String) extends ToDateType[String] {
     def d(): Date = Date(any)
+
     def t(): Time = Time(any)
+
     def dt(): DateTime = DateTime(any)
   }
 
   private[time] trait ToTemporal[T] {
     def years(): TemporalUnit
+
     def months(): TemporalUnit
+
     def weeks(): TemporalUnit
+
     def days(): TemporalUnit
+
     def hours(): TemporalUnit
+
     def minutes(): TemporalUnit
+
     def seconds(): TemporalUnit
+
     def millis(): TemporalUnit
   }
 
   private[time] class IntToTemporal(any: Int) extends ToTemporal[Int] {
     def years(): TemporalUnit = TemporalUnit(years = any)
+
     def months(): TemporalUnit = TemporalUnit(months = any)
+
     def weeks(): TemporalUnit = TemporalUnit(weeks = any)
+
     def days(): TemporalUnit = TemporalUnit(days = any)
+
     def hours(): TemporalUnit = TemporalUnit(hours = any)
+
     def minutes(): TemporalUnit = TemporalUnit(minutes = any)
+
     def seconds(): TemporalUnit = TemporalUnit(seconds = any)
+
     def millis(): TemporalUnit = TemporalUnit(millis = any)
   }
 
@@ -130,4 +149,5 @@ package time {
 
     def millis(): TemporalUnit = TemporalUnit(millis = any)
   }
+
 }

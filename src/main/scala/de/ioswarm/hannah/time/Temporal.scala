@@ -1,4 +1,4 @@
-package ioswarm.hannah.time
+package de.ioswarm.hannah.time
 
 import java.time.{Duration, Period}
 import java.util.Locale
@@ -16,7 +16,7 @@ trait Temporal[T <: AnyRef] {
   def -(amount: Long): T = minus(amount)
   def minus(amount: Long): T
 
-  def -(temporal: TemporalUnit) = minus(temporal)
+  def -(temporal: TemporalUnit): T = minus(temporal)
   def minus(temporal: TemporalUnit): T
 
   def until(to: T): TemporalUnit

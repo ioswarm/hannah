@@ -1,4 +1,4 @@
-package ioswarm.hannah.http
+package de.ioswarm.hannah.http
 
 import io.netty.handler.codec.http.{HttpMethod => NettyHttpMethod}
 

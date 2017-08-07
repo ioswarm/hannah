@@ -1,4 +1,4 @@
-package ioswarm.hannah.net
+package de.ioswarm.hannah.net
 
 /**
   * Created by andreas on 08.04.17.

@@ -1,4 +1,4 @@
-package ioswarm.hannah.time
+package de.ioswarm.hannah.time
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -78,6 +78,6 @@ case class DateTime(dateTime: LocalDateTime) extends TemporalDateTimeFacade with
 
   def compare(that: DateTime): Int = dateTime.compareTo(that.dateTime)
 
-  override def toString = format()
+  override def toString: String = format()
 
 }

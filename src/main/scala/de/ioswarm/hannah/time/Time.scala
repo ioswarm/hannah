@@ -1,4 +1,4 @@
-package ioswarm.hannah.time
+package de.ioswarm.hannah.time
 
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
@@ -69,5 +69,5 @@ case class Time(time: LocalTime) extends TemporalTimeFacade with Ordered[Time] {
 
   def compare(that: Time): Int = time.compareTo(that.time)
 
-  override def toString = format()
+  override def toString: String = format()
 }

@@ -1,6 +1,6 @@
 name := """hannah"""
 
-organization := "ioswarm"
+organization := "de.ioswarm"
 
 version := "0.1.0"
 

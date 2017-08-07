@@ -1,4 +1,4 @@
-package ioswarm.hannah.http
+package de.ioswarm.hannah.http
 
 /**
   * Created by andreas on 16.04.17.
@@ -28,7 +28,7 @@ object HttpStatus extends Enumeration{
   val TEMPORARY_REDIRECT = Value(307, "Temporary Redirect")
   val PERMANENT_REDIRECT = Value(308, "Permanent Redirect")
   val BAD_REQUEST = Value(400, "Bad Request")
-  val UNAUTHRIZED = Value(401, "Unauthorized")
+  val UNAUTHORIZED = Value(401, "Unauthorized")
   val PAYMENT_REQUIRED = Value(402, "Payment Required")
   val FORBIDDEN = Value(403, "Forbidden")
   val NOT_FOUND = Value(404, "Not Found")

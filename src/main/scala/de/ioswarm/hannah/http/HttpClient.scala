@@ -1,4 +1,4 @@
-package ioswarm.hannah.http
+package de.ioswarm.hannah.http
 
 import java.nio.ByteBuffer
 
@@ -8,7 +8,7 @@ import io.netty.channel.{Channel, ChannelHandlerContext, ChannelInitializer, Sim
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioSocketChannel
 import io.netty.handler.codec.http._
-import ioswarm.hannah.net.URI
+import de.ioswarm.hannah.net.URI
 
 import scala.concurrent.{Future, Promise}
 
@@ -36,7 +36,7 @@ object HttpClient {
 
   def delete(request: HttpRequest): Future[HttpResponse] = call(request method DELETE)
 }
-class HttpClient(val uri: URI) {
+private[http] class HttpClient(val uri: URI) {
 
   val group = new NioEventLoopGroup()
 

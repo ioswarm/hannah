@@ -1,4 +1,4 @@
-package ioswarm.hannah.util
+package de.ioswarm.hannah.util
 
 /**
   * Created by andreas on 09.07.16.

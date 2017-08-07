@@ -1,10 +1,10 @@
-package ioswarm.hannah.http
+package de.ioswarm.hannah.http
 
 import java.nio.ByteBuffer
 
 import io.netty.handler.codec.http
 import io.netty.handler.codec.http.FullHttpResponse
-import ioswarm.hannah.http.HttpStatus._
+import HttpStatus._
 /**
   * Created by andreas on 16.04.17.
   */

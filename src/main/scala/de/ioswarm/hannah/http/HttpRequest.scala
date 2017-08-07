@@ -1,10 +1,11 @@
-package ioswarm.hannah.http
+package de.ioswarm.hannah.http
 
 import java.nio.ByteBuffer
 
+import de.ioswarm.hannah.net.URI
 import io.netty.handler.codec.http
 import io.netty.handler.codec.http.DefaultFullHttpRequest
-import ioswarm.hannah.net.URI
+
 
 /**
   * Created by andreas on 17.04.17.
